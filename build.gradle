@@ -1,0 +1,10 @@
+allprojects {
+
+
+    group 'com.whyischen'
+    version '1.0-SNAPSHOT'
+
+    repositories {
+        mavenCentral()
+    }
+}
