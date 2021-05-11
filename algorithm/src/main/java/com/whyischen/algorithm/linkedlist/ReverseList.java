@@ -11,6 +11,21 @@ public class ReverseList {
         }
 
         @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+
+            ListNode listNode = (ListNode) o;
+
+            return val == listNode.val;
+        }
+
+        @Override
+        public int hashCode() {
+            return val;
+        }
+
+        @Override
         public String toString() {
             return "ListNode{" +
                     "val=" + val +
@@ -66,12 +81,75 @@ public class ReverseList {
         return head;
     }
 
+    /**
+     * 反转链表，迭代实现
+     *
+     * @param head
+     * @return
+     */
+    public static ListNode reverse2(ListNode head) {
+
+        ListNode pre = null, cur = head, next = null;
+
+        while (cur != null) {
+            next = cur.next;
+
+            cur.next = pre;
+            pre = cur;
+            cur = next;
+        }
+
+        return pre;
+    }
+
+    /**
+     * 反转区间 [a, b) 的元素，注意是左闭右开
+     */
+    public static ListNode reverse(ListNode a, ListNode b) {
+        if (a.equals(b)) {
+            return a;
+        }
+
+        ListNode pre = null, cur = a, next = null;
+
+        while (!cur.equals(b)) {
+
+            next = cur.next;
+
+            cur.next = pre;
+            pre = cur;
+            cur = next;
+        }
+
+        return pre;
+    }
+
+    /**
+     * k 个一组反转链表
+     */
+    public static ListNode reverseKGroup(ListNode head, int k) {
+        if (head == null) return null;
+        // 区间 [a, b) 包含 k 个待反转元素
+        ListNode a, b;
+        a = b = head;
+        for (int i = 0; i < k; i++) {
+            // 不足 k 个，不需要反转，base case
+            if (b == null) return head;
+            b = b.next;
+        }
+        // 反转前 k 个元素
+        ListNode newHead = reverse(a, b);
+        // 递归反转后续链表并连接起来
+        a.next = reverseKGroup(b, k);
+        return newHead;
+    }
+
 
     public static void main(String[] args) {
 
         ListNode head = buildList(10);
 
-        head = reverseBetween(head, 2, 5);
+        head = reverseKGroup(head, 3);
 
         printNode(head);
     }
