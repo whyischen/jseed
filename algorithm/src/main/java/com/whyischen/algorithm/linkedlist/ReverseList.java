@@ -81,19 +81,13 @@ public class ReverseList {
         return head;
     }
 
-    /**
-     * 反转链表，迭代实现
-     *
-     * @param head
-     * @return
-     */
-    public static ListNode reverse2(ListNode head) {
+    public static ListNode reverse2(ListNode a) {
+        if (a == null) return null;
 
-        ListNode pre = null, cur = head, next = null;
+        ListNode pre = null, cur = a, next = null;
 
         while (cur != null) {
             next = cur.next;
-
             cur.next = pre;
             pre = cur;
             cur = next;
@@ -115,7 +109,6 @@ public class ReverseList {
         while (!cur.equals(b)) {
 
             next = cur.next;
-
             cur.next = pre;
             pre = cur;
             cur = next;
@@ -144,51 +137,86 @@ public class ReverseList {
         return newHead;
     }
 
+    /**
+     * 判断回文链表
+     */
+    public static boolean palindrome(ListNode head) {
+        if (head == null) return false;
+
+        if (head.next == null) return true;
+
+        // 找到中间结点
+        ListNode low = head, fast = head;
+        while (fast != null && fast.next != null) {
+            low = low.next;
+            fast = fast.next.next;
+        }
+        boolean flag = fast != null;
+        if (flag) low = low.next;
+
+        // 反转后面的链表
+        ListNode left = head;
+        ListNode right = reverse2(low);
+
+        var q = right;
+        var p = head;
+
+        while (right != null) {
+            if (left.val != right.val) return false;
+            p = left;
+            left = left.next;
+            right = right.next;
+        }
+
+        // 还原反转的链表
+        if (flag) p = left;
+        p.next = reverse(q);
+
+        return true;
+    }
 
     public static void main(String[] args) {
 
-        ListNode head = buildList(10);
+        ListNode head = new ListNode(1);
+        ListNode cur = head;
 
-        head = reverseKGroup(head, 3);
+        cur.next = new ListNode(2);
+        cur = cur.next;
 
+        cur.next = new ListNode(3);
+        cur = cur.next;
+
+        cur.next = new ListNode(2);
+        cur = cur.next;
+
+        cur.next = new ListNode(1);
+
+        printNode(head);
+        System.out.println("====>>>> " + palindrome(head));
         printNode(head);
     }
 
     public static void printNode(ListNode head) {
-        if (head == null) {
-            return;
-        }
-
+        if (head == null) return;
         ListNode temp = head;
-
         StringBuilder print = new StringBuilder(head.val + "");
-
         while (temp.next != null) {
             temp = temp.next;
             print.append(" -> ").append(temp.val);
         }
-
         System.out.println(print);
     }
 
     public static ListNode buildList(int size) {
+        if (size <= 1) new ListNode(0);
 
         ListNode head = new ListNode(0);
-
-        if (size <= 1) {
-            return head;
-        }
-
-        ListNode temp = null;
+        ListNode temp = head;
         for (int i = 1; i < size; i++) {
             ListNode node = new ListNode(i);
-
-            if (temp == null) temp = head;
-
             temp.next = node;
             temp = node;
         }
-
         return head;
     }
 
