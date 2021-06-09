@@ -1,4 +1,4 @@
-package com.whyischen.algorithm.binarytree;
+package com.whyischen.jseed.algorithm.binarytree;
 
 /**
  * @author wangchenguang

@@ -1,4 +1,4 @@
-package com.whyischen.algorithm.test;
+package com.whyischen.jseed.algorithm.test;
 
 import org.junit.jupiter.api.Test;
 

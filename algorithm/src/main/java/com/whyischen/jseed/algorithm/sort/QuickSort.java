@@ -1,4 +1,4 @@
-package com.whyischen.algorithm.sort;
+package com.whyischen.jseed.algorithm.sort;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package com.whyischen.algorithm.linkedlist;
+package com.whyischen.jseed.algorithm.linkedlist;
 
 public class ReverseList {
 

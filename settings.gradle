@@ -1,4 +1,4 @@
 rootProject.name = 'jseed'
 include 'algorithm'
-include 'algorithm'
+include 'basic'
 
