@@ -3,15 +3,13 @@ package com.whyischen.jseed.springlearn;
 import com.whyischen.jseed.springlearn.model.Hello;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.*;
+import org.springframework.stereotype.Controller;
 
 @SpringBootApplication
 public class SpringLearnApplication {
 
-    @ComponentScan(value = "com.whyischen")
+    @ComponentScan(value = "com.whyischen" )
     @Configuration
     public static class RootConfig {
 

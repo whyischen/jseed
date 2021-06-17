@@ -7,7 +7,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 class SpringLearnApplicationTests {
 
     @Test
-    void contextLoads() {
+    void testPrint() {
+        System.out.println("print success.");
     }
 
 }

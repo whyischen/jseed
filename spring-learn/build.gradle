@@ -1,14 +1,11 @@
-apply plugin: 'java'
-
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation(project(":autumn"))
 
-	compileOnly 'org.projectlombok:lombok'
-	annotationProcessor 'org.projectlombok:lombok'
-
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 test {
-	useJUnitPlatform()
+    // 先不打开自动测试
+//    useJUnitPlatform()
 }

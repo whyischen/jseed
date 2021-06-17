@@ -1,4 +1,5 @@
 rootProject.name = 'jseed'
 include 'algorithm'
+include 'autumn'
 include 'basic'
 include 'spring-learn'
