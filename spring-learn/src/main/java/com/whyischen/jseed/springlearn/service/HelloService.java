@@ -1,11 +1,11 @@
 package com.whyischen.jseed.springlearn.service;
 
-import org.springframework.stereotype.Service;
+import com.whyischen.jseed.autumn.Component;
 
-@Service
+@Component(name = "helloService")
 public class HelloService {
 
     public String hello() {
-        return "Hello World!";
+        return "Hello Autumn!";
     }
 }
