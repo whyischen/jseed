@@ -1,6 +1,7 @@
 package com.whyischen.jseed.autumn;
 
 import java.io.File;
+import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
 import java.util.concurrent.ConcurrentHashMap;
@@ -93,12 +94,31 @@ public class ApplicationContext {
         }
     }
 
+    /**
+     * 1. 实例化 Bean
+     * 2. 填充属性
+     * 3. 执行初始化方法
+     *
+     * @param beanDefinition Bean 定义信息
+     * @return
+     */
     private Object createBean(BeanDefinition beanDefinition) {
-
         Class<?> clazz = beanDefinition.getClazz();
-
         try {
-            return clazz.getDeclaredConstructor().newInstance();
+            // 1. 实例化 Bean
+            Object instance = clazz.getDeclaredConstructor().newInstance();
+            // 2. 依赖注入
+            for (Field field : clazz.getDeclaredFields()) {
+                if (!field.isAnnotationPresent(Autowired.class)) {
+                    continue;
+                }
+                field.setAccessible(true);
+                Object bean = getBean(field.getName());
+                field.set(instance, bean);
+            }
+            // 3. 执行初始化方法
+
+            return instance;
         } catch (InstantiationException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
