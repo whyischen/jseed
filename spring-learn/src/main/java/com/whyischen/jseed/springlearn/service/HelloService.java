@@ -3,7 +3,7 @@ package com.whyischen.jseed.springlearn.service;
 import com.whyischen.jseed.autumn.Autowired;
 import com.whyischen.jseed.autumn.Component;
 
-@Component(name = "helloService")
+@Component("helloService")
 public class HelloService {
 
     @Autowired

@@ -72,7 +72,7 @@ public class ApplicationContext {
                     }
                     // 有@Component注解
                     Component componentAnnotation = clazz.getDeclaredAnnotation(Component.class);
-                    String beanName = componentAnnotation.name();
+                    String beanName = componentAnnotation.value();
 
                     BeanDefinition beanDefinition = new BeanDefinition();
                     beanDefinition.setClazz(clazz);
