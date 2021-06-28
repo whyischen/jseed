@@ -36,7 +36,7 @@ public class ApplicationContext {
 
         beanDefinitionMap.forEach((beanName, beanDefinition) -> {
             if (SCOPE_SINGLETON.equals(beanDefinition.getScope())) {
-                Object bean = createBean(beanDefinition);
+                Object bean = createBean(beanName, beanDefinition);
                 singletonObjects.put(beanName, bean);
             }
         });
@@ -102,7 +102,7 @@ public class ApplicationContext {
      * @param beanDefinition Bean 定义信息
      * @return
      */
-    private Object createBean(BeanDefinition beanDefinition) {
+    private Object createBean(String beanName, BeanDefinition beanDefinition) {
         Class<?> clazz = beanDefinition.getClazz();
         try {
             // 1. 实例化 Bean
@@ -116,6 +116,22 @@ public class ApplicationContext {
                 Object bean = getBean(field.getName());
                 field.set(instance, bean);
             }
+
+            if (instance instanceof BeanNameAware) {
+                ((BeanNameAware) instance).setBeanName(beanName);
+            }
+
+            if (instance instanceof InitializingBean) {
+                try {
+                    ((InitializingBean) instance).afterPropertiesSet();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+
+
+
             // 3. 执行初始化方法
 
             return instance;
@@ -144,7 +160,7 @@ public class ApplicationContext {
         }
 
         // 创建 Bean
-        return createBean(beanDefinition);
+        return createBean(beanName, beanDefinition);
     }
 
 
