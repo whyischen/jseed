@@ -4,6 +4,8 @@ import java.io.File;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class ApplicationContext {
@@ -18,9 +20,11 @@ public class ApplicationContext {
     /**
      * 单例池
      */
-    private ConcurrentHashMap<String, Object> singletonObjects = new ConcurrentHashMap<>();
+    private final ConcurrentHashMap<String, Object> singletonObjects = new ConcurrentHashMap<>();
 
-    private ConcurrentHashMap<String, BeanDefinition> beanDefinitionMap = new ConcurrentHashMap<>();
+    private final ConcurrentHashMap<String, BeanDefinition> beanDefinitionMap = new ConcurrentHashMap<>();
+
+    private final List<BeanPostProcessor> beanPostProcessorList = new ArrayList<>();
 
     /**
      * 1. 获取 Bean 的类扫描路径
@@ -84,10 +88,19 @@ public class ApplicationContext {
                         beanDefinition.setScope(SCOPE_SINGLETON);
                     }
 
+                    if (BeanPostProcessor.class.isAssignableFrom(clazz)) {
+                        Object beanPostProcessorInstance = clazz.getDeclaredConstructor().newInstance();
+                        beanPostProcessorList.add((BeanPostProcessor) beanPostProcessorInstance);
+                    }
+
                     beanDefinitionMap.put(beanName, beanDefinition);
-
-
-                } catch (ClassNotFoundException e) {
+                } catch (ClassNotFoundException | NoSuchMethodException e) {
+                    e.printStackTrace();
+                } catch (InvocationTargetException e) {
+                    e.printStackTrace();
+                } catch (InstantiationException e) {
+                    e.printStackTrace();
+                } catch (IllegalAccessException e) {
                     e.printStackTrace();
                 }
             }
@@ -121,6 +134,11 @@ public class ApplicationContext {
                 ((BeanNameAware) instance).setBeanName(beanName);
             }
 
+            for (BeanPostProcessor beanPostProcessor : beanPostProcessorList) {
+                instance = beanPostProcessor.postProcessBeforeInitialization(instance, beanName);
+            }
+
+            // 3. 执行初始化方法
             if (instance instanceof InitializingBean) {
                 try {
                     ((InitializingBean) instance).afterPropertiesSet();
@@ -129,10 +147,9 @@ public class ApplicationContext {
                 }
             }
 
-
-
-
-            // 3. 执行初始化方法
+            for (BeanPostProcessor beanPostProcessor : beanPostProcessorList) {
+                instance = beanPostProcessor.postProcessAfterInitialization(instance, beanName);
+            }
 
             return instance;
         } catch (InstantiationException e) {

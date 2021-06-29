@@ -15,6 +15,6 @@ public class HelloService {
 
     public String helloOrder() {
         orderService.printOrder();
-        return "Hello Order!";
+        return "This is helloOrder();";
     }
 }

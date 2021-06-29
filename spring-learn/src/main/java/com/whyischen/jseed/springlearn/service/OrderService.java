@@ -6,7 +6,7 @@ import com.whyischen.jseed.autumn.Component;
 public class OrderService {
 
     public void printOrder() {
-        System.out.println("This is orderService.");
+        System.out.println("This is OrderService.");
     }
 
 }
