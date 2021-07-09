@@ -41,63 +41,7 @@ import java.util.List;
 public class ZigzagConversion {
 
     public static String convert(String s, int numRows) {
-        int tail = numRows - 2;
-
-        int unitLength = numRows + tail;
-
-        List<List<Character>> longList = new ArrayList<>(unitLength);
-        List<List<Character>> tailList = new ArrayList<>(unitLength);
-
-        List<Character> curLong = new ArrayList<>(numRows);
-        List<Character> curTail = new ArrayList<>(tail);
-        for (int i = 0; i < s.length(); i++) {
-
-            int loc = i % unitLength;
-
-            if (loc < numRows) {
-                curLong.add(s.charAt(i));
-                if (curLong.size() >= numRows) {
-                    longList.add(curLong);
-                    curLong = new ArrayList<>(numRows);
-                }
-            } else {
-                curTail.add(s.charAt(i));
-                if (curTail.size() >= tail) {
-                    tailList.add(curTail);
-                    curTail = new ArrayList<>(tail);
-                }
-            }
-
-            if (i == s.length() - 1) {
-                if (!curLong.isEmpty() && curLong.size() < numRows) {
-                    longList.add(curLong);
-                }
-                if (!curTail.isEmpty() && curTail.size() < tail) {
-                    tailList.add(curTail);
-                }
-            }
-        }
-
-        StringBuilder builder = new StringBuilder();
-
-        for (int i = 0; i < numRows; i++) {
-            for (int j = 0; j < longList.size(); j++) {
-                curLong = longList.get(j);
-                builder.append(curLong.get(j));
-
-                if (i == 0 || i == numRows - 1) {
-                    if (tailList.size() - 1 >=  j) {
-                        int index = 0;
-
-
-                        curTail = tailList.get(j);
-                        builder.append(curTail.get(index));
-                    }
-                }
-            }
-        }
-
-        return builder.toString();
+        return "";
     }
 
     public static void main(String[] args) {
