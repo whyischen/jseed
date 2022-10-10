@@ -1,84 +1,44 @@
 package com.whyischen.jseed.algorithm;
 
-import lombok.ToString;
+import com.whyischen.jseed.algorithm.util.ListNode;
 
 /**
  * 反转链表
  */
 public class ReverseList {
 
-    @ToString
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
-
     /**
-     * 反转链表
-     *
-     * @param head
-     * @return
+     * 反转链表 - 递归实现
      */
-    public static ListNode reverse(ListNode head) {
-
-        if (head.next == null) {
+    public static ListNode reverseList(ListNode head) {
+        if (head == null || head.next == null) {
             return head;
         }
 
-        var last = reverse(head.next);
-
+        var last = reverseList(head.next);
         head.next.next = head;
         head.next = null;
-
         return last;
     }
 
-    public static void main(String[] args) {
-
-        ListNode head = new ListNode(10111);
-        ListNode temp = null;
-
-        int size = 2;
-
-        for (int i = 0; i < size; i++) {
-            ListNode node = new ListNode(i);
-
-            if (temp == null) {
-                head.next = node;
-                temp = node;
-                continue;
-            }
-
-            temp.next = node;
-            temp = node;
+    /**
+     * 反转链表 - 迭代实现
+     */
+    public static ListNode reverseList2(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
         }
 
-        printNode(head);
-
-        ListNode reverse = reverse(head);
-
-        printNode(reverse);
+        ListNode prev = null;
+        ListNode curr = head;
+        while (curr != null) {
+            var next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        return prev;
     }
 
-    public static void printNode(ListNode head) {
-        if (head == null) {
-            return;
-        }
-
-        ListNode temp = head;
-
-        StringBuilder print = new StringBuilder(head.val + "");
-
-        while (temp.next != null) {
-            temp = temp.next;
-            print.append(" -> ").append(temp.val);
-        }
-
-        System.out.println(print);
-    }
 
 }
