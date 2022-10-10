@@ -1,21 +1,19 @@
-package com.whyischen.jseed.algorithm.linkedlist;
+package com.whyischen.jseed.algorithm;
 
+import lombok.ToString;
+
+/**
+ * 反转链表
+ */
 public class ReverseList {
 
+    @ToString
     public static class ListNode {
         int val;
         ListNode next;
 
         ListNode(int x) {
             val = x;
-        }
-
-        @Override
-        public String toString() {
-            return "ListNode{" +
-                    "val=" + val +
-                    ", next=" + next +
-                    '}';
         }
     }
 

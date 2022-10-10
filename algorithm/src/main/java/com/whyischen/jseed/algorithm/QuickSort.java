@@ -1,9 +1,10 @@
-package com.whyischen.jseed.algorithm.sort;
+package com.whyischen.jseed.algorithm;
 
 import java.util.Arrays;
 
 /**
- * @author wangchenguang
+ * 快速排序
+ * </p>
  */
 public class QuickSort {
 
@@ -27,17 +28,16 @@ public class QuickSort {
     }
 
     private static int partition(int[] array, int left, int right) {
-        int pivot = left;
-        int index = pivot + 1;
+        int index = left + 1;
 
         for (int i = index; i <= right; i++) {
-            if (array[i] < array[pivot]) {
+            if (array[i] < array[left]) {
                 swap(array, i, index);
                 index++;
             }
         }
 
-        swap(array, pivot, index - 1);
+        swap(array, left, index - 1);
 
         return index - 1;
     }

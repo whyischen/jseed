@@ -1,4 +1,4 @@
-package com.whyischen.jseed.algorithm.weeklyselection;
+package com.whyischen.jseed.algorithm.weekly;
 
 import java.util.Arrays;
 
