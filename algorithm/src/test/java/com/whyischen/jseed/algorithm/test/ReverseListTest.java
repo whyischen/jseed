@@ -1,8 +1,8 @@
 package com.whyischen.jseed.algorithm.test;
 
-import com.whyischen.jseed.algorithm.ReverseList;
-import com.whyischen.jseed.algorithm.util.ListNode;
-import com.whyischen.jseed.algorithm.util.NodeUtil;
+import com.whyischen.algorithm.ReverseList;
+import com.whyischen.algorithm.util.ListNode;
+import com.whyischen.algorithm.util.NodeUtil;
 import org.junit.jupiter.api.Test;
 
 
