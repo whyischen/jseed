@@ -17,22 +17,26 @@ package com.whyischen.algorithm;
  */
 public class CanJump {
 
+    /**
+     * 每走一步都计算当前是否走到了终点，以及还可以走的步数
+     * 当没有步数可以走，并且没有走到终点，游戏失败
+     */
     public static boolean canJump(int[] nums) {
         if (nums.length <= 1) {
             return true;
         }
-
         var curr = 0;
         var spare = 0;
-
         while (true) {
+            // 已经走到终点
             if (curr >= nums.length - 1) {
                 return true;
             }
             spare = Math.max(nums[curr], spare);
             curr++;
             spare--;
-
+            // spare 为还可以走的步数
+            // spare < 0 代表没有步数可以走了
             if (spare < 0) {
                 return false;
             }
