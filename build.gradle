@@ -2,9 +2,9 @@
 // plugins {}块的默认行为是立即resolve 和 apply插件。
 // 但是，您可以使用apply false语法告诉 Gradle 不要将插件应用到当前项目，然后plugins {}在子项目的构建脚本中使用没有版本的块
 plugins {
-    id 'org.springframework.boot' version '2.5.0' apply false
+    id 'org.springframework.boot' version '2.7.8' apply false
     // 一个提供类似 Maven 依赖管理功能的 Gradle 插件
-    id 'io.spring.dependency-management' version '1.0.11.RELEASE' apply false
+    id 'io.spring.dependency-management' version '1.0.15.RELEASE' apply false
 }
 
 // rootProject + subProjects
@@ -28,7 +28,7 @@ subprojects {
         // Maven 的依赖管理包括物料清单 (bom) 的概念。
         // bom 是一种特殊的 pom，用于控制项目依赖项的版本，并提供一个中心位置来定义和更新这些版本。
         imports {
-            mavenBom 'org.springframework.boot:spring-boot-dependencies:2.5.0'
+            mavenBom 'org.springframework.boot:spring-boot-dependencies:2.7.8'
         }
         dependencies {
             dependency 'commons-codec:commons-codec:1.15'
