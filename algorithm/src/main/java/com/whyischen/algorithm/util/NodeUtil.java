@@ -18,6 +18,22 @@ public class NodeUtil {
         System.out.println(print);
     }
 
+    public static ListNode array2ListNode(int[] arr) {
+        if (arr == null || arr.length == 0) {
+            return null;
+        }
+        if (arr.length == 1) {
+            return new ListNode(arr[0]);
+        }
+        var root = new ListNode(arr[0]);
+        ListNode cur = root;
+        for (int i = 1; i < arr.length; i++) {
+            cur.next = new ListNode(arr[i]);
+            cur = cur.next;
+        }
+        return root;
+    }
+
     public static TreeNode array2Tree(Integer[] arr) {
         if (arr == null || arr.length == 0) {
             return new TreeNode();
