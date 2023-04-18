@@ -8,6 +8,14 @@ import java.util.Arrays;
  */
 public class QuickSort {
 
+    public static void main(String[] args) {
+//        int[] array = new int[]{5, 1, 6, 9, 2, 12, 3};
+        int[] array = new int[]{6, 1, 2, 9, 12, 5, 7};
+        quickSort(array, 0, array.length - 1);
+        System.out.println(Arrays.toString(array));
+
+    }
+
     public static void quickSort(int[] array, int left, int right) {
         if (right <= left) {
             return;
@@ -21,7 +29,6 @@ public class QuickSort {
 
     private static int partition(int[] array, int left, int right) {
         int index = left + 1;
-
         for (int i = index; i <= right; i++) {
             if (array[i] < array[left]) {
                 swap(array, i, index);
@@ -76,11 +83,4 @@ public class QuickSort {
         array[i2] = temp;
     }
 
-    public static void main(String[] args) {
-//        int[] array = new int[]{5, 1, 6, 9, 2, 12, 3};
-        int[] array = new int[]{6, 1, 2, 9, 12, 5, 7};
-        quickSort(array, 0, array.length - 1);
-        System.out.println(Arrays.toString(array));
-
-    }
 }
