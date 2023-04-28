@@ -1,4 +1,4 @@
-package wang.chenguang.learn.QA;
+package wang.chenguang.learn.question;
 
 import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 

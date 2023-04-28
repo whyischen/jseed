@@ -1,4 +1,4 @@
-package wang.chenguang.learn.QA.动态代理;
+package wang.chenguang.learn.question.动态代理;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

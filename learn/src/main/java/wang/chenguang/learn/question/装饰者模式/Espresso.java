@@ -1,4 +1,4 @@
-package wang.chenguang.learn.QA.装饰者模式;
+package wang.chenguang.learn.question.装饰者模式;
 
 /**
  * 具体组件
