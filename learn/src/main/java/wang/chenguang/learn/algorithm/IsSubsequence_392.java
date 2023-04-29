@@ -1,7 +1,5 @@
 package wang.chenguang.learn.algorithm;
 
-import java.util.HashMap;
-
 /**
  * 392. 判断子序列
  * 给定字符串 s 和 t ，判断 s 是否为 t 的子序列。
@@ -16,11 +14,27 @@ import java.util.HashMap;
 public class IsSubsequence_392 {
 
     public static void main(String[] args) {
-        System.out.println(isSubsequence("abbc","ahbgdc"));
+        System.out.println(isSubsequence("abbc", "ahbgbdc"));
     }
 
+    /**
+     * 判断 s 是否为 t 的子序列
+     */
     public static boolean isSubsequence(String s, String t) {
-
+        if (s.length() == 0) {
+            return true;
+        }
+        // 解题思路：双指针
+        var indexS = 0;
+        for (int i = 0; i < t.length(); i++) {
+            if (t.charAt(i) == s.charAt(indexS)) {
+                indexS++;
+            }
+            // 找到子序列
+            if (indexS >= s.length()) {
+                return true;
+            }
+        }
         return false;
     }
 }
