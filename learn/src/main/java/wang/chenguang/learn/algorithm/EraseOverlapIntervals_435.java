@@ -3,7 +3,7 @@ package wang.chenguang.learn.algorithm;
 import java.util.Arrays;
 import java.util.Comparator;
 
-public class EraseOverlapIntervals {
+public class EraseOverlapIntervals_435 {
 
     /**
      * 435. 无重叠区间

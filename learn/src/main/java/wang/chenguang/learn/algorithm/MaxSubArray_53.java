@@ -17,7 +17,7 @@ package wang.chenguang.learn.algorithm;
  * 输入：nums = [5,4,-1,7,8]
  * 输出：23
  */
-public class MaxSubArray {
+public class MaxSubArray_53 {
 
     /**
      * 动态规划
@@ -30,7 +30,9 @@ public class MaxSubArray {
         var max = nums[0];
 
         for (int i = 1; i < nums.length; i++) {
-            currMax = Math.max(nums[i], currMax + nums[i]);
+            // currMax = currMax + next元素
+            // max函数用来判断 currMax 是负数的情况
+            currMax = Math.max(currMax + nums[i], nums[i]);
             max = Math.max(max, currMax);
         }
 

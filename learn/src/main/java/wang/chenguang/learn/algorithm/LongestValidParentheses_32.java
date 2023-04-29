@@ -15,7 +15,7 @@ import java.util.Stack;
  * 输出：4
  * 解释：最长有效括号子串是 "()()"
  */
-public class LongestValidParentheses {
+public class LongestValidParentheses_32 {
 
     /**
      * 栈底始终记录当前有效括号的起始位置

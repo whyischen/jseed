@@ -12,8 +12,9 @@ import java.util.HashSet;
  * 输出：[9,4]
  * 解释：[4,9] 也是可通过的
  */
-public class Intersection {
+public class Intersection_349 {
 
+    // 两个数组都转化成 set，然后比较是否包含
     public static int[] intersection(int[] nums1, int[] nums2) {
         var set1 = new HashSet<Integer>();
         for (int i = 0; i < nums1.length; i++) {

@@ -15,7 +15,7 @@ package wang.chenguang.learn.algorithm;
  * 输出：false
  * 解释：无论怎样，总会到达下标为 3 的位置。但该下标的最大跳跃长度是 0 ， 所以永远不可能到达最后一个下标。
  */
-public class CanJump {
+public class CanJump_55 {
 
     /**
      * 每走一步都计算当前是否走到了终点，以及还可以走的步数
