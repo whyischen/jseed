@@ -1,0 +1,17 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: project-webapp
+  cloud:
+    sentinel:
+      transport:
+        # 默认 8719 端口，假如被占用了会自动从 8719 端口 +1 进行扫描，直到找到未被占用的 端口
+        port: 8719
+        # 配置 sentinel dashboard 地址
+        dashboard: localhost:8808
+
+feign:
+  sentinel:
+    enabled: true
