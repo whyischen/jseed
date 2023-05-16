@@ -12,7 +12,6 @@ dependencies {
     // spring boot
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
-    implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-sentinel:2022.0.0.0-RC2'
 
     // 本地没 redis
 //    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
