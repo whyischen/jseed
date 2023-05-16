@@ -12,14 +12,18 @@ dependencies {
     // spring boot
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-json
+    implementation 'org.springframework.boot:spring-boot-starter-json'
 
-    // 本地没 redis
+
+    // redis 依赖
 //    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
-    // 本地没有 mysql，先不打开 mybatis
-//    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter'
+    // mybatis 依赖
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter'
 
     compileOnly 'org.projectlombok:lombok'
-//    runtimeOnly 'com.mysql:mysql-connector-j'
+    // 数据库依赖
+    runtimeOnly 'com.mysql:mysql-connector-j'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
