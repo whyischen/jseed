@@ -15,14 +15,17 @@ dependencies {
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-json
     implementation 'org.springframework.boot:spring-boot-starter-json'
 
-
     // redis 依赖
 //    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
     // mybatis 依赖
     implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter'
 
+    // jpa 依赖
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    // lombok
     compileOnly 'org.projectlombok:lombok'
-    // 数据库依赖
+    // mysql driver class
     runtimeOnly 'com.mysql:mysql-connector-j'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
