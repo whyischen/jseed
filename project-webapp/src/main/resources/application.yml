@@ -9,6 +9,10 @@ spring:
     url: jdbc:mysql://localhost:3306/test?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=true
     username: root
     password: 123456
+  jpa:
+    open-in-view: false
+    show-sql: true
 
 mybatis:
   type-aliases-package: 'com.whyischen.projectwebapp.entity'
+
