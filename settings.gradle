@@ -1,7 +1,7 @@
 rootProject.name = 'jseed'
 include 'autumn'
+include 'autumn-example'
 include 'basic'
-include 'spring-learn'
 include 'project-webapp'
 include 'learn'
 
