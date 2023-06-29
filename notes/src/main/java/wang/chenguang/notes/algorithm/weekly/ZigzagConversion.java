@@ -1,9 +1,9 @@
 package wang.chenguang.notes.algorithm.weekly;
 
 /**
- * 将一个给定字符串 s 根据给定的行数 numRows ，以从上往下、从左到右进行 Z 字形排列。
+ * 将一个给定字符串 s 根据给定的行数 numRows ，以从上往下、从左到右进行 N 字形排列。
  * <p>
- * 比如输入字符串为 "PAYPALISHIRING" 行数为 3 时，排列如下：
+ * 比如输入字符串为 "PAYPALISHIRING" 行数为 3 时，排列如下：
  * <p>
  * P   A   H   N
  * A P L S I I G
@@ -30,10 +30,6 @@ package wang.chenguang.notes.algorithm.weekly;
  * <p>
  * 输入：s = "A", numRows = 1
  * 输出："A"
- * <p>
- * 来源：力扣（LeetCode）
- * 链接：https://leetcode-cn.com/problems/zigzag-conversion
- * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 public class ZigzagConversion {
 

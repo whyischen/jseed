@@ -26,7 +26,6 @@ public class UserController {
     @RequestMapping("/get2")
     public User get2() {
         return userRepository.findById(1L).get();
-//        return userRepository.findAll().get(0);
     }
 
 }

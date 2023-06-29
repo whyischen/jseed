@@ -16,3 +16,10 @@ spring:
 mybatis:
   type-aliases-package: 'com.whyischen.projectwebapp.entity'
 
+logging:
+  level:
+    org.zalando.logbook: trace
+
+logbook:
+  format:
+    style: http

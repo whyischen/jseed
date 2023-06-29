@@ -16,12 +16,8 @@ import java.util.Arrays;
  * 最终，我们到过网格的所有R * C个空间。
  * <p>
  * 按照访问顺序返回表示网格位置的坐标列表。
- * <p>
- * 来源：力扣（LeetCode）
- * 链接：https://leetcode-cn.com/problems/spiral-matrix-iii
- * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
-public class SpiralMatrixIII {
+public class SpiralMatrixIII_885 {
 
     // 官方答案
     public static int[][] spiralMatrixIII(int R, int C, int r0, int c0) {
