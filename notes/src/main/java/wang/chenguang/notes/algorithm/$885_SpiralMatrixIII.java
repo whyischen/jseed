@@ -1,4 +1,4 @@
-package wang.chenguang.notes.algorithm.weekly;
+package wang.chenguang.notes.algorithm;
 
 import java.util.Arrays;
 
@@ -17,7 +17,7 @@ import java.util.Arrays;
  * <p>
  * 按照访问顺序返回表示网格位置的坐标列表。
  */
-public class SpiralMatrixIII_885 {
+public class $885_SpiralMatrixIII {
 
     // 官方答案
     public static int[][] spiralMatrixIII(int R, int C, int r0, int c0) {

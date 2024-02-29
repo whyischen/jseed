@@ -12,7 +12,7 @@ import java.util.HashMap;
  * 输入：s = "egg", t = "add"
  * 输出：true
  */
-public class IsIsomorphic_205 {
+public class $205_IsIsomorphic {
 
     public static void main(String[] args) {
         System.out.println(isIsomorphic("abcdefghijklmnopqrstuvwxyzva", "abcdefghijklmnopqrstuvwxyzck"));

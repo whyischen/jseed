@@ -5,7 +5,7 @@ import wang.chenguang.notes.algorithm.util.ListNode;
 /**
  * 反转链表
  */
-public class ReverseList_206 {
+public class $206_ReverseList {
 
     /**
      * 反转链表 - 递归实现

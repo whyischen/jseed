@@ -17,7 +17,7 @@ package wang.chenguang.notes.algorithm;
  * 输入：nums = [5,4,-1,7,8]
  * 输出：23
  */
-public class MaxSubArray_53 {
+public class $53_MaxSubArray {
 
     /**
      * 动态规划

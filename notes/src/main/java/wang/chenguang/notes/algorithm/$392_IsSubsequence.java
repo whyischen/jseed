@@ -11,7 +11,7 @@ package wang.chenguang.notes.algorithm;
  * 输入：s = "abc", t = "ahbgdc"
  * 输出：true
  */
-public class IsSubsequence_392 {
+public class $392_IsSubsequence {
 
     public static void main(String[] args) {
         System.out.println(isSubsequence("abbc", "ahbgbdc"));

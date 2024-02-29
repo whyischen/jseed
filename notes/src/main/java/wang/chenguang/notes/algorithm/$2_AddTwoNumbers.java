@@ -12,7 +12,7 @@ import wang.chenguang.notes.algorithm.util.NodeUtil;
  * 输出：[7,0,8]
  * 解释：342 + 465 = 807.
  */
-public class AddTwoNumbers_2 {
+public class $2_AddTwoNumbers {
 
     public static void main(String[] args) {
         var l1 = NodeUtil.array2ListNode(new int[]{2,4,3});

@@ -12,7 +12,7 @@ import wang.chenguang.notes.algorithm.util.TreeNode;
  * <p>
  * 给你一个二叉树的根节点 root ，返回其 最大路径和 。
  */
-public class MaxPathSum_124 {
+public class $124_MaxPathSum {
 
     static int maxSum = Integer.MIN_VALUE;
 
