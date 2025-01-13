@@ -1,4 +1,4 @@
-package question;
+package notes.多线程与锁;
 
 import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 

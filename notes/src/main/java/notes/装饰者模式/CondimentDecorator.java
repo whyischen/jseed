@@ -1,4 +1,4 @@
-package question.装饰者模式;
+package notes.装饰者模式;
 
 /**
  * 抽象装饰者

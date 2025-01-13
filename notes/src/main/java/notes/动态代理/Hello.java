@@ -1,4 +1,4 @@
-package question.动态代理;
+package notes.动态代理;
 
 public interface Hello {
 

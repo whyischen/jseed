@@ -1,6 +1,6 @@
-package question;
+package notes.反射;
 
-import com.whyischen.basic.entity.User;
+import com.whyischen.projectwebapp.entity.User;
 
 import java.lang.reflect.InvocationTargetException;
 
